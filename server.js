@@ -37,21 +37,22 @@ app.get('/:amount', (req,res)=>{
     data.map((hero) => newCharacters.push({name: hero.name, image: `${hero.thumbnail.path}.${hero.thumbnail.extension}`}));
     // Remove heroes without images
     let characters = newCharacters.filter((hero) => !hero.image.includes('image_not_available'));
-
+    
     // Manually Removing Non-X-men Characters
     let xMenCharacters = characters.filter((hero) => {
       return hero.name != 'Captain America' && hero.name != 'Black Panther' && hero.name != 'Iron Man' && hero.name != 'X-Factor' && hero.name != 'X-Men';
     });
-
+    
     if(qty == 0 || qty > xMenCharacters.length) {
       res.json({error: "wrong quantity of characters"});
     }
-
+    
     let finalCharacters = [];
     while (finalCharacters.length < qty) {
       let pickedHero = xMenCharacters.splice(Math.floor(Math.random() * xMenCharacters.length), 1);
-      finalCharacters.push(pickedHero);
+      finalCharacters.push(pickedHero[0]);
     }
+    console.log(finalCharacters);
 
     res.json(finalCharacters);
   }).catch(function (error) {
