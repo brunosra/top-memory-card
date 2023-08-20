@@ -1,17 +1,16 @@
 import { useState } from "react";
 import "./App.css";
-import MainGame from "./MainGame";
-import MainMenu from "./MainMenu";
-import GameOverScreen from "./GameOverScreen";
+import MainGame from "./components/MainGame";
+import MainMenu from "./components/MainMenu";
+import GameOverScreen from "./components/GameOverScreen";
 
 function App() {
   const [gameState, setGameState] = useState("menu"); //menu, play, gameover
 
   return (
     <>
-      <h1>X-Men Memory Game</h1>
       {gameState == "menu" ? (
-        <MainMenu />
+        <MainMenu handleStartGame={() => setGameState("play")} />
       ) : gameState == "gameover" ? (
         <GameOverScreen />
       ) : (
