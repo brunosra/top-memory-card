@@ -52,7 +52,6 @@ app.get('/:amount', (req,res)=>{
       let pickedHero = xMenCharacters.splice(Math.floor(Math.random() * xMenCharacters.length), 1);
       finalCharacters.push(pickedHero[0]);
     }
-    console.log(finalCharacters);
 
     res.json(finalCharacters);
   }).catch(function (error) {
