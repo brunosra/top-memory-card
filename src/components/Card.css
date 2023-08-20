@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f2f3;
+  border-radius: 0.5rem;
+  width: 33%;
+  max-width: 150px;
+  overflow:hidden;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: box-shadow 0.15s linear;
+}
+
+.card:hover {
+  box-shadow: 0 0 2rem rgba(187, 0, 255, 0.5);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0;
+  color: rgb(49, 48, 48);
+  font-weight: normal;
+  text-align: center;
+  font-size: 1rem;
+}
