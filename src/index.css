@@ -1,7 +1,25 @@
+@font-face {
+  font-family: 'Adam Warren pro';
+  src: url('fonts/AdamWarrenpro-Bold.woff2') format('woff2'),
+      url('fonts/AdamWarrenpro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adam Warren pro';
+  src: url('fonts/AdamWarrenpro.woff2') format('woff2'),
+      url('fonts/AdamWarrenpro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Adam Warren pro', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: normal;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
