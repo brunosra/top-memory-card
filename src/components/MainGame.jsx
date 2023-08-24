@@ -1,37 +1,58 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import axios from "axios";
 import Card from "./Card";
 import "./MainGame.css";
 import Spinner from "./Spinner";
 
-function MainGame() {
-  const [data, setData] = useState([]);
-  const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
-
-  let qty = 10;
+const MainGame = forwardRef(({ handleCardClick, qtyCards }, ref) => {
+  const [board, setBoard] = useState([]);
+  const [heroes, setHeroes] = useState([]);
 
   useEffect(() => {
     const options = {
       method: "GET",
-      url: `http://localhost:5200/${qty}`,
+      url: `http://localhost:5200/${qtyCards}`,
     };
-    axios
-      .request(options)
-      .then(function (response) {
-        setData(response.data);
-      })
-      .catch(function (error) {
-        console.error(error.error);
-      });
-  }, []);
+    const fetchHeroes = async () => {
+      const result = await axios.request(options);
+      setHeroes(result.data);
+      setBoard(result.data);
+    };
+    fetchHeroes();
+  }, [qtyCards]);
+
+  useImperativeHandle(ref, () => ({
+    shuffleCards() {
+      let finalCharacters = [];
+      let copyHeroes = [...heroes];
+      while (finalCharacters.length < qtyCards) {
+        let pickedHero = copyHeroes.splice(
+          Math.floor(Math.random() * copyHeroes.length),
+          1
+        );
+        finalCharacters.push(pickedHero[0]);
+      }
+      setBoard(finalCharacters);
+    },
+  }));
 
   return (
     <div id="main-game">
       <div className="board">
-        {data.length > 0 ? (
-          data.map((hero) => (
-            <Card key={hero.name} name={hero.name} image={hero.image} />
+        {board.length > 0 ? (
+          board.map((hero) => (
+            <Card
+              key={hero.name}
+              id={hero.name}
+              name={hero.name}
+              image={hero.image}
+              handleClick={handleCardClick}
+            />
           ))
         ) : (
           <Spinner />
@@ -39,6 +60,8 @@ function MainGame() {
       </div>
     </div>
   );
-}
+});
+
+MainGame.displayName = "MainGame";
 
 export default MainGame;
