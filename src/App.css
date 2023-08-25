@@ -37,3 +37,10 @@
 .read-the-docs {
   color: #888;
 }
+
+#scorecard {
+  display: flex;
+  max-width: 1200px;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}

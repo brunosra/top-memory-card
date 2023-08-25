@@ -1,11 +1,15 @@
 import React from "react";
 
-function MainMenu({ handleStartGame }) {
+function MainMenu({ handleStartGame, difficulty }) {
   return (
     <div id="main-menu">
       <h1>X-Men Memory Game</h1>
       <h2>Welcome to the Game</h2>
-      <button onClick={handleStartGame}>Play</button>
+      {difficulty.map((item) => (
+        <button key={item.name} onClick={() => handleStartGame(item.cards)}>
+          {item.name}
+        </button>
+      ))}
     </div>
   );
 }

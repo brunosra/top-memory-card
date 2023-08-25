@@ -1,6 +1,42 @@
 #main-game .board {
   display: flex;
   gap: 1rem;
+  max-width: 1200px;
+  padding: 1rem 2rem;
+  align-content: center;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+#main-game .board .card {
+  width: calc(100% / 2 - 1rem);
+}
+
+@media screen and (min-width: 768px) {
+  #main-game .board .card {
+    width: calc(100% / 4 - 1rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #main-game .board .card {
+    width: calc(100% / 6 - 1rem);
+  }
+}
+
+
+/* #main-game .board {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  max-width: 1200px;
+  padding: 1rem 2rem;
+  align-content: center;
   justify-content: center;
 }
+
+@media screen and (min-width: 768px) {
+  #main-game .board {
+    grid-template-columns: auto auto auto auto auto auto;
+  }
+} */

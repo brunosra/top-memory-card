@@ -1,10 +1,14 @@
 import React from "react";
 
-function GameOverScreen() {
+function GameOverScreen({ handlePlayAgain, won, score, highscore }) {
   return (
     <div id="gameover">
       <h2>Game Over!</h2>
-      <button>Play again?</button>
+      {won && <h1>You Won!</h1>}
+      <h3>
+        Your Score: {score} | High Score: {highscore}
+      </h3>
+      <button onClick={handlePlayAgain}>Play again?</button>
     </div>
   );
 }
