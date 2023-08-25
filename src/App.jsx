@@ -47,7 +47,9 @@ function App() {
       if (score + 1 == qtyCards) {
         setWon(true);
         setGameState("gameover");
-        setHighScore(score + 1);
+        if (score + 1 > highScore) {
+          setHighScore(score + 1);
+        }
       } else {
         setSelectedCards([...selectedCards, clickedHero]);
         mainGameRef.current.shuffleCards();
