@@ -4,7 +4,7 @@ This project was made as a solution to the [Memory Game](https://www.theodinproj
 
 ## [Live Preview](https://top-cv-builder.netlify.app)
 
-![Preview](/public/preview.png)
+![Preview](/public/images/preview.png)
 
 ## Running Locally: 
 
