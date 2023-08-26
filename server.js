@@ -4,7 +4,8 @@ import md5 from 'md5';
 const port = 5200
 
 // initializing installed dependencies
-import express from 'express';
+import express, {Router} from 'express';
+import serverless from 'serverless-http';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -19,8 +20,10 @@ app.use(cors());
 // listening for port 5000
 app.listen(5200, ()=> console.log(`Server is running on ${port}` ));
 
+const router = Router();
+
 // API request
-app.get('/:amount', (req,res)=>{
+router.get('/:amount', (req,res)=>{
   let qty = req.params.amount ?? 0;
 
   const ts = Date.now();
@@ -58,3 +61,7 @@ app.get('/:amount', (req,res)=>{
       console.error(error);
   });
 });
+
+app.use('/api/', router);
+
+export const handler = serverless(app); 

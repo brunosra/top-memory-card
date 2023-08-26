@@ -1,6 +1,6 @@
 import React from "react";
 import gameLogo from "../assets/xmen-logo.png";
-import "./mainMenu.css";
+import "./MainMenu.css";
 
 function MainMenu({ handleStartGame, difficulty, highScore }) {
   return (
