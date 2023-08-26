@@ -16,7 +16,7 @@ const MainGame = forwardRef(({ handleCardClick, qtyCards }, ref) => {
   useEffect(() => {
     const options = {
       method: "GET",
-      url: `http://localhost:5200/${qtyCards}`,
+      url: `http://localhost:5200/api/${qtyCards}`,
     };
     const fetchHeroes = async () => {
       const result = await axios.request(options);
