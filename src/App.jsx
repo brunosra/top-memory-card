@@ -5,6 +5,7 @@ import "./App.css";
 import MainGame from "./components/MainGame";
 import MainMenu from "./components/MainMenu";
 import GameOverScreen from "./components/GameOverScreen";
+import AudioController from "./components/AudioController";
 
 const difficulty = [
   {
@@ -66,33 +67,40 @@ function App() {
 
   return (
     <>
-      {gameState == "menu" ? (
-        <MainMenu handleStartGame={startGame} difficulty={difficulty} />
-      ) : gameState == "gameover" ? (
-        <GameOverScreen
-          handlePlayAgain={() => setGameState("menu")}
-          won={won}
-          score={score}
-          highscore={highScore}
-        />
-      ) : (
-        <>
-          <div id="scorecard">
-            <div>
-              Your Score: <span value="value">{score}</span>
-            </div>
-            <div>
-              High Score: <span value="value">{highScore}</span>
-            </div>
-          </div>
-          <MainGame
-            ref={mainGameRef}
-            // handleCardClick={() => mainGameRef.current.shuffleCards()}
-            handleCardClick={handleCardClick}
-            qtyCards={qtyCards}
+      <div className="overlay"></div>
+      <AudioController isPlaying={true} />
+      <div className="main-content">
+        {gameState == "menu" ? (
+          <MainMenu
+            handleStartGame={startGame}
+            difficulty={difficulty}
+            highScore={highScore}
           />
-        </>
-      )}
+        ) : gameState == "gameover" ? (
+          <GameOverScreen
+            handlePlayAgain={() => setGameState("menu")}
+            won={won}
+            score={score}
+            highscore={highScore}
+          />
+        ) : (
+          <>
+            <div id="scorecard">
+              <div>
+                Your Score: <span value="value">{score}</span>
+              </div>
+              <div>
+                High Score: <span value="value">{highScore}</span>
+              </div>
+            </div>
+            <MainGame
+              ref={mainGameRef}
+              handleCardClick={handleCardClick}
+              qtyCards={qtyCards}
+            />
+          </>
+        )}
+      </div>
     </>
   );
 }

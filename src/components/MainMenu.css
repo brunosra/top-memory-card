@@ -1,0 +1,23 @@
+#main-menu .logo {
+  width: 100%;
+  max-width: 400px;
+}
+
+#main-menu h1,
+#main-menu h2,
+#main-menu h3 {
+  margin: 0;
+}
+
+#main-menu h3.high-score {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+#main-menu .button-container {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
