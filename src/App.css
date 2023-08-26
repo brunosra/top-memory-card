@@ -2,19 +2,26 @@
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem 2rem;
   text-align: center;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #scorecard {
   display: flex;
-  max-width: 1200px;
-  padding: 1rem 2rem;
+  width: calc(100% - 4rem);
+  padding: 0;
   justify-content: space-between;
+  position: fixed;
+  top: 1rem;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -27,4 +34,8 @@
 .main-content {
   position: relative;
   z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
 }

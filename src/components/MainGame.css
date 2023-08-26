@@ -2,10 +2,11 @@
   display: flex;
   gap: 1rem;
   max-width: 1200px;
-  padding: 1rem 2rem;
+  padding: 0rem;
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 #main-game .board .card {

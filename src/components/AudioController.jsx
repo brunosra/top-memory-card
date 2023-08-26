@@ -9,6 +9,12 @@ function AudioController() {
 
   const handleIsPlaying = () => {
     audioControl.current.volume = 0.5;
+
+    if (!isPlaying) {
+      audioControl.current.play();
+    } else {
+      audioControl.current.pause();
+    }
     setIsPlaying(!isPlaying);
   };
 
@@ -20,7 +26,7 @@ function AudioController() {
       >
         <img src={audioIcon} />
       </div>
-      <audio id="audio" ref={audioControl} loop autoPlay muted={!isPlaying}>
+      <audio id="audio" ref={audioControl} loop autoPlay>
         <source src={bgMusic} type="audio/mpeg" />
       </audio>
     </>
