@@ -95,7 +95,6 @@ function App() {
             </div>
             <MainGame
               ref={mainGameRef}
-              // handleCardClick={() => mainGameRef.current.shuffleCards()}
               handleCardClick={handleCardClick}
               qtyCards={qtyCards}
             />
