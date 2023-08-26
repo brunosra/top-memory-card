@@ -1,9 +1,8 @@
 #main-game .board {
   display: flex;
   gap: 1rem;
-  max-width: 1200px;
   padding: 0rem;
-  align-content: center;
+  align-content: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   box-sizing: border-box;
@@ -14,6 +13,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  #main-game .board {
+    align-content: center;
+  }
+  
   #main-game .board .card {
     width: calc(100% / 4 - 1rem);
   }

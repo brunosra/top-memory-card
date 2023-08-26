@@ -11,13 +11,13 @@
 
 #scorecard {
   display: flex;
-  width: calc(100% - 4rem);
-  padding: 0;
+  width: 100%;
+  padding: 0 2rem;
   justify-content: space-between;
   position: fixed;
   top: 1rem;
-  max-width: 1200px;
   box-sizing: border-box;
+  left: 0;
 }
 
 .overlay {

@@ -1,8 +1,18 @@
-# React + Vite
+# The Odin Project: CV Application (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was made as a solution to the [Memory Game](https://www.theodinproject.com/lessons/node-path-react-new-memory-card#solutions) project from the React Course in The Odin Project.
 
-Currently, two official plugins are available:
+## [Live Preview](https://top-cv-builder.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Preview](/public/preview.png)
+
+## Running Locally: 
+
+This project uses the official Marvel API.
+You will need a register for a free account and fill in your information in the ```.env.sample``` file. After that, rename the file to ```.env```.
+
+Then install dependencies:
+run ```npm install```
+
+And run both servers (proxy and app)
+run ```npm start```
