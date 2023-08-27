@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Adam Warren pro';
-  src: url('fonts/AdamWarrenpro-Bold.woff2') format('woff2'),
-      url('fonts/AdamWarrenpro-Bold.woff') format('woff');
+  src: url('assets/fonts/AdamWarrenpro-Bold.woff2') format('woff2'),
+      url('assets/fonts/AdamWarrenpro-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
   font-family: 'Adam Warren pro';
-  src: url('fonts/AdamWarrenpro.woff2') format('woff2'),
-      url('fonts/AdamWarrenpro.woff') format('woff');
+  src: url('assets/fonts/AdamWarrenpro.woff2') format('woff2'),
+      url('assets/fonts/AdamWarrenpro.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -32,7 +32,7 @@
   -webkit-text-size-adjust: 100%;
 
   height: 100vh;
-  background: url('images/background-fx.jpg') no-repeat center center;
+  background: url('assets/background-fx.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }

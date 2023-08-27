@@ -9,7 +9,7 @@ This project was made as a solution to the [Memory Game](https://www.theodinproj
 ## Running Locally: 
 
 This project uses the official Marvel API.
-You will need a register for a free account and fill in your information in the ```.env.sample``` file. After that, rename the file to ```.env```.
+You will need a register for a free account and fill in your information in the ```.env``` file.
 
 Then install dependencies:
 run ```npm install```
