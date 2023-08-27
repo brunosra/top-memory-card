@@ -100,6 +100,11 @@ function App() {
             />
           </>
         )}
+        <small>
+          Data provided by Marvel.
+          <br />
+          Copyright 2023 MARVEL.
+        </small>
       </div>
     </>
   );

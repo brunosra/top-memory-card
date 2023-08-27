@@ -39,3 +39,11 @@
   flex-direction: column;
   place-content: center;
 }
+
+small {
+  display: block;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  text-align: right;
+}
