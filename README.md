@@ -2,7 +2,7 @@
 
 This project was made as a solution to the [Memory Game](https://www.theodinproject.com/lessons/node-path-react-new-memory-card#solutions) project from the React Course in The Odin Project.
 
-## [Live Preview](https://top-cv-builder.netlify.app)
+## [Live Preview](https://cool-fairy-f06959.netlify.app/)
 
 ![Preview](/public/images/preview.png)
 
